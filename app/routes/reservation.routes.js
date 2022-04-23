@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const async = require('hbs/lib/async');
-let Reserv = require('../reservation')
+let Reserv = require('../Reservation')
 
 router.route('/').post(async(req, res) => {
    
