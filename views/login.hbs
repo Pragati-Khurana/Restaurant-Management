@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+	Resto by GetTemplates.co
+	URL: https://gettemplates.co
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Restro - Restaurant Management System</title>
+    <meta name="description" content="Resto">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <style>
+        .login-form {
+            width: 340px;
+            margin: 120px auto;
+        }
+        .login-form form {
+            margin-bottom: 15px;
+            background: #ffffff;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }    
+    </style>
+</head>
+<script>
+    function fetchlog()
+        {
+            var e = document.getElementById("email").value;
+            var p = document.getElementById("password").value;
+            fetch('/user/login',{
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"user_email": e,"user_password": p})
+            })
+            .then(res=>res.json())
+            .then(data=>
+            {
+                
+                if(data!= null)
+                {
+                    alert("login successfully ");
+                    document.cookie = "uid="+data.user_id;
+                    
+                    location.href="/";
+                }
+                else
+                {
+                    alert("login unsuccessfully ");
+                }
+            });
+            
+        }
+    
+</script>
+<body>
+    <div class="login-form align-items-center mt-20">
+        <form action="" method="post">
+            <h2 class="text-center">Log in</h2>       
+            <div class="form-group">
+                <input id="email" type="text" class="form-control" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+                <input id="password" type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-block" onclick="fetchlog()" >Log In</button>
+            </div>       
+        </form>
+        
+        <p class="text-center"><a href="registration.html">Create an Account</a></p>
+    </div>
+</ul>
+</form>
+</body>
+</html>

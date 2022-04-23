@@ -1,0 +1,81 @@
+#menu-card {
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+#menu-title {
+	text-align: center;
+	/* position: fixed; */
+	top: 0;
+	background-color: black;
+	color: white;
+	width: 100%;
+}
+
+#menu-options li {
+	list-style: none;
+	display: inline-block;
+	padding: 20px 25px;
+}
+
+#menu-options a:hover {
+  background: #ddd;
+  color: black;
+}
+
+#menu-options {
+	/* position: fixed; */
+	top: 50px;
+	overflow: hidden;
+	width: 100%;
+	background-color: black;
+
+}
+
+#menu-options ul {
+	text-align: center;
+}
+
+#menu-options a {
+    text-decoration: none;
+    color: black;
+    color: white;
+    padding: 20px 25px;
+}
+
+#punjabi-menu {
+	display: none;
+}
+
+#chinese-menu {
+	display: none;
+}
+
+#fast-food-menu {
+	display: none;
+}
+
+.menu-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 140px;
+	padding-top: 30px;
+}
+
+.menu-item {
+	padding-bottom: 30px;
+}
+
+.menu-container h2 {
+	display: inline;
+	margin-left: 50px;	
+}
+
+.menu-container p {
+	margin-left: 50px;
+}
+
+.menu-container em {
+	float: right;
+	margin-right: 50px;
+}
